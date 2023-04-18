@@ -1,7 +1,5 @@
 ## Installation on EC2 Instance
 
-![Screenshot 2023-02-01 at 5 46 14 PM](https://user-images.githubusercontent.com/43399466/216040281-6c8b89c3-8c22-4620-ad1c-8edd78eb31ae.png)
-
 Install Jenkins, configure Docker as agent, set up cicd, deploy applications to k8s and much more.
 
 ## AWS EC2 Instance
@@ -9,6 +7,8 @@ Install Jenkins, configure Docker as agent, set up cicd, deploy applications to 
 - Go to AWS Console
 - Instances(running)
 - Launch instances
+
+<img width="994" alt="Screenshot 2023-02-01 at 12 37 45 PM" src="https://user-images.githubusercontent.com/43399466/215974891-196abfe9-ace0-407b-abd2-adcffe218e3f.png">
 
 ### Install Jenkins.
 
