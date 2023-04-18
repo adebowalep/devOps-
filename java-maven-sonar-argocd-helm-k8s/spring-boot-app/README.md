@@ -55,6 +55,7 @@ Hurray !! Access the application on `http://<ip-address>:8010`
 apt install unzip
 adduser sonarqube
 wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-9.4.0.54424.zip
+app install unzip
 unzip *
 chmod -R 755 /home/sonarqube/sonarqube-9.4.0.54424
 chown -R sonarqube:sonarqube /home/sonarqube/sonarqube-9.4.0.54424
@@ -62,6 +63,37 @@ cd sonarqube-9.4.0.54424/bin/linux-x86-64/
 ./sonar.sh start
 ```
 
-Hurray !! Now you can access the `SonarQube Server` on `http://<ip-address>:9000` 
+Hurray !! Now you can access the `SonarQube Server` on `http://<ip-address>:9000`
+
+### Connect SonarQube server from an EC2 instance to Jenkins pipeline 
+#### Get the SonarQube URL and token:
+   - Log in to SonarQube server.
+   - Go to "My Account" -> "Security" -> "Generate Tokens".
+   - Give a name for the token and click on "Generate".
+   - Copy the generated token and note down the URL.
+
+####  Add SonarQube Server credentials in Jenkins:
+   - Go to Jenkins dashboard and click on "Credentials" -> "System".
+   - Click on "Global credentials (unrestricted)" -> "Add Credentials".
+   - Select "Secret text" in the "Kind" dropdown.
+   - Paste the copied token in the "Secret" field.
+   - Enter any ID and description of your choice and click "OK".
+
+### Install docker on the EC2 instance using the guidelines in the root README file 
+
+### Install Argo CD using the kubernetes operator from operator Hub 
+   - Ensure that Kubernetes cluster is running and kubectl is installed on your machine.
+   - Navigate to the Operator Hub in your web browser: https://operatorhub.io/.
+   - Search and select  ArgoCD from the list of operators.
+   - Click on the "Install" button on the Argo CD Operator card.
+   -  Follow the instructions  of installation on the Argo CD operator card. 
+   - Check if the Argo CD operator installed successfully using 
+      ```
+      kubectl get pods -n operators 
+      ```
+
+
+
+
 
 
